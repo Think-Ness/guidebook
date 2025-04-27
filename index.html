@@ -142,6 +142,17 @@
       border-radius: 10px;
       /* Radius sudut track */
     }
+/* Mengubah warna teks di dalam <a> menjadi putih */
+  #agendaTable a {
+  color: white;
+  text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+#agendaTable a:hover {
+  color: white; /* Tetap putih saat hover */
+  text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+
   </style>
 
   <style>
@@ -286,7 +297,7 @@
                             <button
                               class="btn-open-invitation btn btn-primary rounded-pill mb-4 animate__animated animate__fadeInUp animate__slow"
                               style="font-size: 14px">
-                              Open Guidebook
+                              Mulai
                             </button>
                           </div>
                         </div>
@@ -628,6 +639,9 @@
                               Susunan Acara
                             </div>
                           </div>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qrModal">
+                            Buka QR Modal
+                          </button>
                           <!-- <div class="editable ml-5 mb-4 animate__animated animate__fadeInLeft animate__slower"
                             style="font-size: 14.4px">
                             1. Pembacaan Ayat Suci Al-Qur'an<br />
@@ -660,7 +674,7 @@
                                   <th>Agenda</th>
                                 </tr>
                               </thead>
-                              <tbody>
+                              <tbody >
                                 <tr>
                                   <td>1</td>
                                   <td>Pembacaan Ayat Suci Al-Quran</td>
@@ -737,15 +751,17 @@
                             </table>
                           </div>
                           <!-- Tombol Scroll -->
-                          <div class="text-center mt-2">
+                          <!-- <div class="text-center mt-2">
                             <button id="scrollUp" class="btn btn-primary">🔼</button>
                             <button id="scrollDown" class="btn btn-primary">🔽</button>
-                          </div>
+                          </div> -->
 
 
 
                         </div>
                       </div>
+   
+                      
 
 
 
@@ -1069,7 +1085,7 @@
                                     width: 100%;
                                     height: 129px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-y9o8gHW4Gq.jpg"
+                                <img src="asset/images/galleries/4.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1087,7 +1103,7 @@
                                     width: 100%;
                                     height: 129px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-ZY9fBa6WpB.jpg"
+                                <img src="asset/images/galleries/5.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1105,7 +1121,7 @@
                                     width: 100%;
                                     height: 129px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-WIn7c1ViiK.jpg"
+                                <img src="asset/images/galleries/6.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1123,7 +1139,7 @@
                                     width: 100%;
                                     height: 129px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-gfQFSyVjo8.jpg"
+                                <img src="asset/images/galleries/7.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1141,7 +1157,7 @@
                                     width: 100%;
                                     height: 100px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-u9jNXH2vD9.jpg"
+                                <img src="asset/images/galleries/8.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1160,7 +1176,7 @@
                                     width: 100%;
                                     height: 100px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-osSArMyT95.jpg"
+                                <img src="asset/images/galleries/9.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1178,7 +1194,7 @@
                                     width: 100%;
                                     height: 100px;
                                   ">
-                                <img src="https://assets.satumomen.com/images/galleries/521895-gallery-Qm3Baash71.jpg"
+                                <img src="asset/images/galleries/10.jpg"
                                   style="
                                       width: 100%;
                                       height: 100%;
@@ -1250,7 +1266,7 @@
                                   margin: auto;
                                   font-size: 12px;
                                 ">
-                              Unduh Guidebook
+                              Buka Guidebook
                             </a>
                           </div>
                           <div class="gift-container mt-3 p-4 rounded animate__animated animate__zoomIn animate__slow">
