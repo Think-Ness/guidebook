@@ -114,6 +114,7 @@
       border-radius: 10px;
     }
 
+
     Custom scrollbar
     ::-webkit-scrollbar {
       width: 12px;
@@ -1808,6 +1809,23 @@ Dariku anak rantau
       var instances = M.Modal.init(elems);
     });
   </script>
+
+
+<!-- Scrol Tabel -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var tableScrollArea = document.querySelector('#agendaTable').parentElement;
+
+    tableScrollArea.addEventListener('touchstart', function(e) {
+      e.stopPropagation();
+    }, { passive: true });
+
+    tableScrollArea.addEventListener('touchmove', function(e) {
+      e.stopPropagation();
+    }, { passive: true });
+  });
+</script>
+
   
 
   <script>
