@@ -662,33 +662,37 @@
                       <!-- Foto dan Puisinya -->
 
                       <div class="d-flex justify-content-center align-items-center" style="height: 100%">
-                        <div style="width: 100%">
+                      <div style="width: 100%">
                           <div class="image-editable animate__animated animate__fadeInUp animate__slower" style="
                         height: 100px;
                         margin-top: 0;
                         width: 100px;
                         margin: auto;
-                        /* border: 1px solid #F46E31; */
                         border-radius: 100%;
                         overflow: hidden;
                         margin-bottom: 20px;
                       ">
-                            <img src="asset/images/peserta/db/Fawaaz.png" style="
+                        <img src="asset/images/peserta/db/Fawaaz.png" style="
                           width: 100%;
                           height: 100%;
                           object-fit: cover;
                         " alt="no-image.jpg" />
-                          </div>
+                        </div>
                           <div style="
- max-height: 500px;
+                              max-height: 300px;
                               overflow-y: auto;
-                              border: 1px solid rgba(255, 255, 255, 0.3);
-                              border-radius: 12px;
                               padding: 10px;
+                              border-radius: 12px;
                               backdrop-filter: blur(5px);
                               background: rgba(255, 255, 255, 0.1);
-                            ">
-                            <div class="text-center mt-2" style="color: white;">
+                              border: 1px solid rgba(255, 255, 255, 0.3);
+                              -webkit-overflow-scrolling: touch;
+                              overscroll-behavior: contain;
+                              touch-action: cross-slide-x;
+                            "
+                            onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();"
+                            >
+                            <div class="text-center mt-2" style="color: var(--inv-accent);">
                               <p>
                                 Mentari pagi menyapa lembut<br>
                                 Di sela rimbun dedaunan rindu<br>
