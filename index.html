@@ -135,14 +135,15 @@
   z-index: 1000;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* gelap transparan */
+  /* background-color: rgba(0, 0, 0, 0.7); gelap transparan */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .modal-content-lirik {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3); 
   padding: 20px;
   border-radius: 16px;
   width: 90%;
@@ -722,7 +723,18 @@ Rangkai lagi satu satu</p>
 </div>
 
 <!-- Modal Lirik -->
-<div id="modalLirik" class="modal-lirik" style="display: none;">
+<div id="modalLirik" class="modal-lirik" style="
+                              display: none;
+                              overflow-y: auto;
+                              border-radius: 12px;
+                              backdrop-filter: blur(5px);
+                              /* background: rgba(255, 255, 255, 0.5);
+                              border: 1px solid rgba(255, 255, 255, 0.3); */
+                              -webkit-overflow-scrolling: touch;
+                              /* overscroll-behavior: contain; */
+                              touch-action: cross-slide-x;
+                            "
+                            onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
   <div class="modal-content-lirik">
     <span class="close-lirik">&times;</span>
     <div class="isi-lirik" style="max-height: 60vh; overflow-y: auto; padding: 10px;"></div>
