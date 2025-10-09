@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AR QR Viewer</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    #camera, model-viewer {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">Scan untuk Tampilkan Model 3D</h2>
+  <div id="camera"></div>
+  <model-viewer id="viewer" style="display:none" ar ar-modes="scene-viewer webxr quick-look" auto-rotate camera-controls></model-viewer>
+
+  <script>
+    const modelMap = {
+      "kubus": "models/kubus.glb",
+      "bola": "models/bola.glb",
+      "kerucut": "models/kerucut.glb"
+    };
+
+    const html5QrCode = new Html5Qrcode("camera");
+
+    function onScanSuccess(decodedText) {
+      console.log(`QR Code terbaca: ${decodedText}`);
+      const modelPath = modelMap[decodedText.toLowerCase()];
+      const viewer = document.getElementById("viewer");
+
+      if (modelPath) {
+        viewer.src = modelPath;
+        viewer.style.display = "block";
+        html5QrCode.stop();
+      } else {
+        alert(`Model '${decodedText}' tidak ditemukan!`);
+      }
+    }
+
+    html5QrCode.start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: 250 },
+      onScanSuccess
+    ).catch(err => {
+      console.error("Gagal buka kamera:", err);
+    });
+  </script>
+</body>
+</html>
