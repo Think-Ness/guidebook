@@ -55,214 +55,188 @@
   <!-- ▲▲▲ KONFIGURASI UTAMA ▲▲▲ -->
 
 
-  <!-- ▼▼▼ DATA LOMBA PORSENI ▼▼▼ -->
+  <!-- ▼▼▼ DATA PESERTA & PENAMPILAN ▼▼▼ -->
   <script>
-    const LOMBA_DATA = [
-      // ── OLAHRAGA ──
+    const PENAMPILAN = [
       {
-        kategori: "⚽ Olahraga",
-        warna: "#e8621a",
-        items: [
-          {
-            nama: "Futsal",
-            icon: "⚽",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "4 Anggota + 1 Pengurus",
-            poin: "Juara 1: 100 • Juara 2: 75 • Semi Final: 50 • Penyisihan: 25",
-            detail: "Tim terdiri dari 4 orang anggota dan 1 orang pengurus. Penilaian berdasarkan hasil pertandingan sistem gugur."
-          },
-          {
-            nama: "Sepak Bola",
-            icon: "🏃",
-            peserta: "7 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "6 Anggota + 1 Pengurus",
-            poin: "Juara 1: 100 • Juara 2: 75 • Semi Final: 50 • Penyisihan: 25",
-            detail: "Tim terdiri dari 6 orang anggota dan 1 orang pengurus. Pertandingan menggunakan sistem gugur."
-          },
-          {
-            nama: "Basket",
-            icon: "🏀",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "4 Anggota + 1 Pengurus",
-            poin: "Juara 1: 100 • Juara 2: 75 • Semi Final: 50 • Penyisihan: 25",
-            detail: "Tim terdiri dari 4 orang anggota dan 1 orang pengurus. Sistem gugur berlaku di setiap babak."
-          },
-          {
-            nama: "Voli",
-            icon: "🏐",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "4 Anggota + 1 Pengurus",
-            poin: "Juara 1: 100 • Juara 2: 75 • Semi Final: 50 • Penyisihan: 25",
-            detail: "Tim terdiri dari 4 orang anggota dan 1 orang pengurus. Sistem gugur berlaku."
-          },
-          {
-            nama: "Badminton",
-            icon: "🏸",
-            peserta: "2 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Pengurus dilarang bermain. Raket dibawa masing-masing peserta.",
-            poin: "Juara 1: 100 • Juara 2: 75 • Semi Final: 50 • Penyisihan: 25",
-            detail: "Pertandingan ganda. Pengurus dilarang bermain. Setiap peserta membawa raket masing-masing."
-          },
+        foto:  "asset/images/peserta/ace/1.png",
+        judul: "Topeng Ireng",
+        pj:    ["Alvarro", "Tsaqib"],
+        durasi: "4 Menit",
+        deskripsi: "Tari Topeng Ireng adalah tarian tradisional rakyat yang berasal dari wilayah Jawa Tengah, terutama berkembang di daerah Magelang, Temanggung, dan sekitarnya. Tarian ini tumbuh dari perpaduan unsur seni tradisi Jawa, pencak silat, dan kesenian rakyat.",
+        peserta: [
+          "Ghibran Ramadhan — 4-E", "Alif Briliyan Sugiharto — 4-C", "M. Habiburrahman — 3 Int E",
+          "Misbah Nur Fahmi — 4-H", "Muhammad Irkham Fitrian — 4-L", "Arrijalul Labib Hakim — 4-L",
+          "Nehan Maulana — 3 Int G", "Muhammad Raidul — 4-E", "Ibraheem Mohammad Noor — 3 Int F",
+          "Nehan Maulana El Muntazer — 3 Int G", "Muhammad Iqbal Maulana — 3 Int G",
+          "Tsakib Muwaffaq Haidar — 4-J", "Arfa Aulayain Baksya — 4-L",
+          "Fahri Syaamil Basayev — 4-G", "Alvarro Azriel Rasya — 4-L", "Okan Ferdiansa — 4-L",
+          "Hammad Abdul Wahhab — 3 Int G", "Daffa Saifurrahman Syarif — 3 Int F",
+          "Birru Elbari — 3 Int F", "Sulthon Hafiz Tri Prasetyo — 4-G", "Fahri Abdurrahman — 4-K",
         ]
       },
-      // ── KETANGKASAN ──
       {
-        kategori: "🏆 Ketangkasan",
-        warna: "#2980b9",
-        items: [
-          {
-            nama: "Kursi Panas",
-            icon: "🪑",
-            peserta: "1 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Sistem musikal — siapa duduk, lanjut",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Peserta mengelilingi kursi saat lagu berlangsung dan duduk ketika lagu berhenti. Siapa yang mendapat kursi lanjut ke babak berikutnya."
-          },
-          {
-            nama: "Basah Kuyup",
-            icon: "💧",
-            peserta: "4 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Angkat wadah air dengan kaki, lepas kaos kaki",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Peserta mengangkat wadah berisi air dengan kaki lalu melepas kaos kaki tanpa menjatuhkan air. Jika air jatuh, isi kembali dan ulangi hingga semua kaos kaki terlepas."
-          },
-          {
-            nama: "Brick Racing",
-            icon: "🧱",
-            peserta: "1 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Berjalan menggunakan pafing/batu bata",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Peserta berjalan dari titik awal ke tujuan dengan hanya menginjak pafing atau batu bata yang telah disediakan. Tercepat menyelesaikan jalur menang."
-          },
-          {
-            nama: "Dragon Ball",
-            icon: "🌊",
-            peserta: "3 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "2 orang menutup lubang pipa, 1 orang isi air",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "2 peserta menutup lubang di pipa menggunakan badan, kaki, dan tangan. Peserta lain menaruh bola di dalam pipa berlubang, lalu mengisi dengan air hingga bola keluar dari atas pipa."
-          },
-          {
-            nama: "Lepaskan Aku",
-            icon: "🏃‍♂️",
-            peserta: "1 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Berlari + lepas karet di wajah tanpa tangan",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Peserta berlari dari depan pintu Madam Amal mengelilingi Gedung Saudi, lalu melepaskan karet yang berada di wajah tanpa menggunakan anggota badan selain wajah."
-          },
-          {
-            nama: "Estafet Bola",
-            icon: "🔄",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "4 orang berbaris, 1 orang berlari ambil bola",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "4 peserta berbaris dengan tangan memegang pundak teman di depan. 1 peserta berlari mengelilingi dapur lama 1 putaran, ambil bola dari juri, lalu mengoper bola dari depan ke belakang tanpa melepas tangan yang memegang pundak."
-          },
-          {
-            nama: "Ninja Warrior",
-            icon: "🥷",
-            peserta: "3 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "3 tahap estafet dengan tantangan unik tiap peserta",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Peserta 1: Berlari mengelilingi Saudi, mengeluarkan karet dari tepung menggunakan sedotan. Peserta 2: Memasukkan sedotan ke botol pakai bibir atas (tanpa tangan), berlari ke peserta 3. Peserta 3: Memasukkan paku (diikat di pinggang) ke dalam botol, bawa ke juri."
-          },
-          {
-            nama: "Tarik Tambang",
-            icon: "💪",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "Tarik tali hingga batas tengah melewati garis",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "Tim menarik tali hingga batas yang ada di tengah tali tertarik sampai melewati garis yang telah ditentukan. Tim yang berhasil melewati garis menang."
-          },
-          {
-            nama: "Estafet Sarung",
-            icon: "🎽",
-            peserta: "5 Orang",
-            kostum: "Kaos, celana training, sepatu",
-            format: "4 bergandengan tangan, 1 berlari ambil sarung & estafet",
-            poin: "Juara 1: 50 • Juara 2: 40 • Semi Final: 25 • Penyisihan: 15",
-            detail: "4 peserta di Gedung Syiria bergandengan tangan. 1 peserta berlari mengelilingi dapur lama, ambil sarung dari juri, lalu mengoper sarung ke semua teman yang bergandengan. Dilakukan bolak-balik (peserta 1→5, lalu 5→1)."
-          },
+        foto:  "asset/images/peserta/ace/2.png",
+        judul: "Tari Timur",
+        pj:    ["Izzat", "La Afnan"],
+        durasi: "4 Menit",
+        deskripsi: "Tari Timur umumnya merujuk pada tarian tradisional dari wilayah Indonesia bagian timur, seperti Papua, Maluku, dan Nusa Tenggara. Tarian-tarian ini mencerminkan kehidupan masyarakat, alam, adat istiadat, serta nilai kebersamaan yang kuat.",
+        peserta: [
+          "La Afnan Muliadi Talib — 3 Int D", "Hasbi Alfan Nasrullah — 4-C",
+          "Zenit Andromeda — 3 Int D", "Ilham Hariri — 3 Int C", "Muh. Ghozy Al-faiq — 4-D",
+          "Muhammad Izzat Ramadhan — 4-H", "Zul Wajhil Munir — 3 Int F",
+          "Aldo Rafiif Haidan Miqdaad — 4-H", "Muhammad Laga Bilhal — 4-H",
+          "Farhan Mubarak Rahman — 4-E", "Adam Bengawan Hati — 4-K",
+          "Rifqi Hisyam Musyaffa — 4-D", "Rayyan Alief Khadafi — 4-J",
+          "Muhammad Rahmat Jayadi — 4-E", "Fauzan Afghani — 3 Int F",
+          "Fahmi Ahmad Badwi — 4-C", "Hasbyallah Mahdi Fadillah — 4-M",
+          "Ahmad Syafii Maarif — 4-M", "Akhdan Naufal Iswanto — 4-C",
+          "Habibi Umar Muhammad — 4-E", "Ahmad Syafiq Rahman — 4-I",
+          "Azka Mulia Fathin — 4-I", "Farid Hawwari — 4-I",
+          "Bahrend Mandhala — 4-E", "Saufi Syahir — 3 Int D", "Luqmanul Hakim — 3 Int C",
         ]
       },
-      // ── KESENIAN ──
       {
-        kategori: "🎨 Kesenian",
-        warna: "#27ae60",
-        items: [
-          {
-            nama: "Anekdot",
-            icon: "🖼️",
-            peserta: "1 Orang",
-            kostum: "-",
-            format: "Shigor: Tema Ronaldo | Kibar: Tema Messi",
-            poin: "Kemiripan: 45 • Kerapihan: 25 • Variasi: 5 | Total: 75",
-            detail: "Peserta membuat gambar anekdot sesuai tema. Dikumpulkan ke Head Office (Wisma Hadi 205). Batas waktu: Shigor Selasa sore, Kibar Ahad sore."
-          },
-          {
-            nama: "Khot",
-            icon: "✍️",
-            peserta: "1 Orang",
-            kostum: "-",
-            format: "Shigor: Khot Naskhi | Kibar: Khot Rik'ah",
-            poin: "Kaedah: 45 • Kerapihan: 15 • Kebersihan kertas: 10 | Total: 75",
-            detail: "Peserta membuat khot sesuai tema. Dikumpulkan ke Head Office (Wisma Hadi 205). Batas waktu: Shigor Rabu sore, Kibar Senin sore."
-          },
-          {
-            nama: "Kreasi Roti",
-            icon: "🍞",
-            peserta: "3 Orang",
-            kostum: "-",
-            format: "Shigor: Tema Kendaraan | Kibar: Tema Bangunan",
-            poin: "Kemiripan: 45 • Kerapihan: 25 • Variasi: 5 | Total: 75",
-            detail: "Peserta membuat kreasi dari roti sesuai tema. Dikumpulkan ke Head Office (Wisma Hadi 205). Batas waktu: Shigor Rabu sore, Kibar Senin sore."
-          },
-          {
-            nama: "Kreasi Barang Bekas",
-            icon: "♻️",
-            peserta: "3 Orang",
-            kostum: "-",
-            format: "Shigor: Kendaraan Laut | Kibar: Kendaraan Tempur",
-            poin: "Kemiripan: 45 • Kerapihan: 25 • Variasi: 5 | Total: 75",
-            detail: "Peserta membuat kreasi dari barang bekas (kardus, botol bekas, kaleng, maket, sedotan, dll) sesuai tema yang ditentukan."
-          },
+        foto:  "asset/images/peserta/ace/3.png",
+        judul: "Reog Ponorogo",
+        pj:    ["Ilyas", "Daffa"],
+        durasi: "4 Menit",
+        deskripsi: "Tari Reog adalah tarian tradisional yang berasal dari Ponorogo, Jawa Timur. Tarian ini merupakan bagian dari kesenian Reog Ponorogo, yang menggabungkan unsur tari, drama, musik, dan atraksi fisik yang kuat.",
+        peserta: [
+          "Muhammad Hidayat — 4-L", "Elbayu Avisena — 3 Int G", "Fatih Khoirul Ikhwan — 4-F",
+          "Nahidh Hawari — 3 Int C", "Hafidz Naufal — 3 Int F", "Muhammad Prima — 4-F",
+          "Ahmad Bima — 4-E", "Farhan Mubarrak — 4-F", "Allkhalif Rezki — 3 Int G",
+          "Muhammad Ikmal — 3 Int F", "Muhammad Imtiyaz — 4-E", "Ghatfanu Saddiq — 4-G",
+          "Muhammad Chairi — 3 Int G", "Zeva Nabiha Zavier — 4-L", "Farhan Nur Rahman — 3 Int F",
+          "Muhammad Zainul — 3 Int F", "Firdaus Izwan — 4-D", "Zaid Niammillah — 3 Int G",
+          "Akhdan Zahid — 3 Int G", "M. Ilyas Dholifun — 4-L", "Dafa Almer Dzaky — 4-C",
+          "Hamid Atha Hilmi — 4-L", "Alvin Sadira — 4-B", "Muhammad Fachri — 3 Int G",
+          "Ferdi Al Kadri — 4-H",
         ]
       },
+      {
+        foto:  "asset/images/peserta/ace/4.png",
+        judul: "Kecak",
+        pj:    ["Alvan", "Alvin"],
+        durasi: "4 Menit",
+        deskripsi: "Tari Kecak merupakan tarian tradisional yang berasal dari Bali dan sangat unik karena tidak menggunakan alat musik sebagai pengiring. Iringan tarian ini berasal dari suara puluhan penari laki-laki yang secara serempak meneriakkan bunyi <em>\"cak, cak, cak\"</em>.",
+        peserta: [
+          "Fikri Abrizi — 4-J", "Lalu Abdullah Ahda — 3 Int E", "Dharoza Adhiyasa — 3 Int D",
+          "Muhammad Aiman — 3 Int F", "Muhammad Lightullah — 3 Int G", "Muhammad Zaidan — 3 Int G",
+          "Arka Yusuf — 4-F", "Ahmad Rashad — 4-H", "Muhammad Jibran — 3 Int F",
+          "Rayyan Al Kafi — 4-H", "Muhammad Safa — 3 Int G", "Mirza Hariz Batrisya — 4-K",
+          "Raihan Ash-shidqy — 3 Int F", "Farras Alvarro Sun — 3 Int F",
+          "Muhammad Jibril — 3 Int F", "Muhammad Aqwam — 3 Int G",
+          "Wan Naufal Fadholy — 3 Int C", "Imam Haikal — 4-I", "Kenzie Setyo Javas — 4-M",
+          "Alvan Rizki Maulidan — 4-H", "Alvin Rizki Maulidi — 4-C",
+          "Muhammad Muadz — 3 Int G", "Muhammad Nurul — 4-J", "Abdurrahman Hakim — 4-E",
+          "Azka Syauqi Azfar — 4-J", "Mr. Imron Keeya — 3 Int E",
+          "Faiz Miraj AbdulAziz — 3 Int G", "Farrel Al Faiz — 3 Int E",
+        ]
+      },
+      {
+        foto:  "asset/images/peserta/ace/5.png",
+        judul: "Campur Sari",
+        pj:    ["Tito", "Zahidul"],
+        durasi: "4 Menit",
+        deskripsi: "Campur Sari adalah musik tradisional Jawa yang menggabungkan unsur gamelan klasik dengan lagu-lagu modern atau populer. Nama <em>campur sari</em> berarti campuran rasa, menggambarkan perpaduan tradisi dan modernitas.",
+        peserta: [
+          "Muhammad Hamiz Barra — 4-J", "Fuad Ajib — 4-F", "Abiyan Afif Yunochi — 4-G",
+          "R. Audwin Daffa Athallah — 4-M", "Aditya Azzam Fadilino — 4-G",
+          "Syafiq Arkan Fawwa Zul — 4-K", "Faza Fauzan Azima — 3 Int E",
+          "Faturrohman Alfarizky — 4-L", "Muhammad Dzaky An Nafi — 4-H",
+          "Zahidul Akmal — 3 Int D", "Noeh Ilhamoeddien Aang — 4-C",
+          "Arsyafin — 4-E", "Tito Ghiofani Putra — 4-L", "Raka Prasetyo Wibisono — 3 Int D",
+          "Abyan Kafil Irtiza — 3 Int D", "Naufal Resendrio — 3 Int E",
+          "Fathir Al Arif — 4-G",
+        ]
+      },
+
+      // ▼ UNTUK MENAMBAH PENAMPILAN BARU, SALIN BLOK DI BAWAH INI ▼
+      // {
+      //   foto:  "asset/images/peserta/ace/6.png",
+      //   judul: "Nama Penampilan",
+      //   pj:    ["Nama PJ 1", "Nama PJ 2"],
+      //   durasi: "4 Menit",
+      //   deskripsi: "Deskripsi singkat penampilan.",
+      //   peserta: [
+      //     "Nama Santri — Kelas",
+      //   ]
+      // },
+      // ▲ BLOK DI ATAS BISA DISALIN DAN DITAMBAHKAN ▲
     ];
   </script>
-  <!-- ▼▼▼ DATA SUSUNAN ACARA PEMBUKAAN ▼▼▼ -->
+  <!-- ▲▲▲ DATA PESERTA & PENAMPILAN ▲▲▲ -->
+
+
+  <!-- ▼▼▼ DATA LIRIK OST ▼▼▼ -->
   <script>
-    const ACARA_PEMBUKAAN = [
-      { no: "01", teks: "Persiapan barisan oleh masing-masing komandan pleton" },
-      { no: "02", teks: "Pemimpin Upacara memasuki lapangan upacara" },
-      { no: "03", teks: "Penghormatan umum kepada Pemimpin Upacara" },
-      { no: "04", teks: "Pimpinan Pondok Modern selaku Pembina Upacara menuju panggung kehormatan" },
-      { no: "05", teks: "Penghormatan umum kepada Pembina Upacara" },
-      { no: "06", teks: "Laporan bahwa upacara siap dimulai" },
-      { no: "07", teks: "Pengibaran bendera PORSENI" },
-      { no: "08", teks: "Amanat Pembina Upacara dilanjutkan dengan pembukaan dan do'a" },
-      { no: "09", teks: "Penghormatan umum kepada Pembina Upacara" },
-      { no: "10", teks: "Pembina Upacara meninggalkan panggung kehormatan" },
-      { no: "11", teks: "Pembacaan janji wasit dan pemain" },
-      { no: "12", teks: "Grand Opening PORSENI 2026" },
-      { no: "13", teks: "Marching Band Gema Nada Darussalam (MGND)" },
-      { no: "14", teks: "Tabloid Olahraga" },
-      { no: "15", teks: "Penutup" },
-    ];
+    const LIRIK_OST = {
+      judul: "LIRIK OST. Porseni 2026",
+      isi: `
+        <p class="part-title">Verse</p>
+        <p>
+          Indah menawan daun-daun berhamburan<br>
+          Sinar terangi kedamaian matahari<br>
+          Berseri, sa mulai hari
+        </p>
+        <p>
+          Jangan-jangan jangan ko lelah kawan<br>
+          Jangan lelah tuk gapai angan<br>
+          Sa berjanji selalu ada<br>
+          Untuk ka di sini
+        </p>
+
+        <p class="part-title">Bridge</p>
+        <p>
+          Lalui semua rintangan<br>
+          Jangan hiraukan halauan yang mengganggu<br>
+          Di setiap langkahmu<br>
+          Lewati hitam abu-abu
+        </p>
+
+        <p class="part-title">Reff</p>
+        <p>
+          Duhaduh kawanku, sudah jang begitu<br>
+          Sama-sama kita bergembira bahagia <span class="chant">(oyyl)</span>
+        </p>
+        <p>
+          Ukir cerita baru<br>
+          Tinggalkan yang su berlalu-lalu<br>
+          Raih masa depanmu
+        </p>
+
+        <p class="part-title">(Melody Reff)</p>
+
+        <p class="part-title">Bridge</p>
+        <p>
+          Tak da kata tak bisa<br>
+          Yakinlah akan ada jembatan<br>
+          Yang satukan dua antara kita
+        </p>
+        <p>
+          Hilangkan perbedaan<br>
+          Pramuka yang tangguh dan bijaksana<br>
+          Terbitkan keteladanan dengan kebersamaan
+        </p>
+
+        <p class="part-title">Reff</p>
+        <p>
+          Duhaduh kawanku, langkahi ragumu<br>
+          Sama-sama lewati suka duka dan luka<br>
+          Bersama-sama
+        </p>
+        <p>
+          Jangan pernah berhenti<br>
+          Untuk tumbuh lebih baik<br>
+          Bersama kita terbit menjadi terik
+        </p>
+
+        <p class="part-title">(Back to Reff)</p>
+      `
+    };
   </script>
+  <!-- ▲▲▲ DATA LIRIK OST ▲▲▲ -->
 
 
   <title>Porseni</title>
@@ -302,7 +276,8 @@
       font-weight: normal;
       font-style: normal;
     }
-    @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@700&display=swap");
 
     /* ── Variabel Warna & Font — ubah di sini untuk ganti tema ── */
     :root {
@@ -310,9 +285,9 @@
       --inv-base:     #1B1B1B;
       --inv-accent:   #F38238;
       --inv-border:   #1B1B1B;
-      --font-base:    "Poppins", sans-serif;
-      --font-accent:  "Antonio", sans-serif;
-      --font-latin:   "Antonio", sans-serif;
+      --font-base:    "Estrella", serif;
+      --font-accent:  "Gwendolyn", cursive;
+      --font-latin:   "Gwendolyn", cursive;
       --menu-bg:      #F38238;
       --menu-inactive:#e8d2c5;
       --menu-active:  #e8d2c5;
@@ -321,7 +296,7 @@
 
     /* ── Body ── */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #45282a;
       color: #333;
       padding: 20px;
@@ -429,25 +404,16 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide2">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_2" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_2" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_2" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_1" src="" style="width:85%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_1" src="" style="width:35%" alt="frame">
+                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_1" src=""  alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center" style="height:100%">
                       <div style="width:100%">
-                        <div class="text-center animate__animated animate__fadeInUp animate__slower" style="padding:0 20px;">
-                          <div style="font-family:'Antonio',sans-serif;font-size:22px;color:var(--inv-accent);font-weight:700;margin-bottom:8px;letter-spacing:1px;">APA ITU PORSENI?</div>
-                          <div style="width:40px;height:3px;background:var(--inv-accent);margin:0 auto 16px;border-radius:2px;"></div>
-                          <div style="font-family:'Poppins',sans-serif;font-size:12px;color:var(--inv-base);line-height:1.8;text-align:left;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,0.3);margin-bottom:14px;">
-                            <p style="margin:0 0 10px 0;"><strong>Pekan Olahraga dan Seni</strong> adalah kegiatan tahunan yang diselenggarakan di Pondok Modern Darussalam Gontor, dikoordinasi oleh kelas 5 KMI.</p>
-                            <p style="margin:0 0 10px 0;">Dibuka di lapangan hijau pada <strong>Jum'at, 10 April 2026</strong> dan dihadiri oleh semua santri dan Asatidz se-Darussalam.</p>
-                            <p style="margin:0;font-style:italic;color:var(--inv-accent);">"Men Sana In Corpore Sano" — Akal sehat terdapat pada badan yang sehat.</p>
-                          </div>
-                          <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-                            <div style="background:rgba(227,98,26,0.15);border:1px solid var(--inv-accent);border-radius:20px;padding:6px 14px;font-family:'Antonio',sans-serif;font-size:11px;color:var(--inv-accent);">⚽ Olahraga</div>
-                            <div style="background:rgba(227,98,26,0.15);border:1px solid var(--inv-accent);border-radius:20px;padding:6px 14px;font-family:'Antonio',sans-serif;font-size:11px;color:var(--inv-accent);">🏆 Ketangkasan</div>
-                            <div style="background:rgba(227,98,26,0.15);border:1px solid var(--inv-accent);border-radius:20px;padding:6px 14px;font-family:'Antonio',sans-serif;font-size:11px;color:var(--inv-accent);">🎨 Kesenian</div>
+                        <div class="text-center animate__animated animate__fadeInUp animate__slower">
+                          <div class="image-editable" style="height:100%;width:100%;margin:auto;overflow:hidden;transform:translate(0px,-14px);">
+                            <!-- Slot kosong — bisa diisi gambar tambahan atau teks sambutan -->
                           </div>
                         </div>
                       </div>
@@ -461,9 +427,10 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide3">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_3" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_3" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_3" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_3" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_3" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_3" src="" style="width:30%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_3" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center" style="height:100%">
@@ -482,25 +449,25 @@
                 </li>
 
                 <!-- ============================================================
-                     SLIDE 4 — SUSUNAN ACARA PEMBUKAAN
+                     SLIDE 4 — LIRIK OST
                 ============================================================ -->
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide4">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_4" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_4" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_4" src=""  alt="frame">
-                      <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_4" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_4" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_4" src="" style="width:30%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_4" src="" style="width:30%" alt="frame">
+                      <img class="frame-br w-100 animate__animated animate__fadeInUp animate__slower" src="asset/tebing/tbh22.png" style="animation-delay:1s;" alt="frame">
                     </div>
                     <div class="d-flex justify-content-center align-items-center" style="height:100%">
                       <div style="width:100%">
-                        <div style="max-height:420px;overflow-y:auto;padding:12px;border-radius:16px;backdrop-filter:blur(8px);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:cross-slide-x;"
+                        <div style="max-height:400px;overflow-y:auto;padding:10px;border-radius:12px;backdrop-filter:blur(5px);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:cross-slide-x;"
                              onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
-                          <div class="text-center mb-3" style="color:var(--inv-accent);">
-                            <div style="font-family:'Antonio',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;">ACARA PEMBUKAAN</div>
-                            <div style="width:40px;height:2px;background:var(--inv-accent);margin:6px auto 0;border-radius:2px;"></div>
+                          <div class="text-center mt-2" style="color:var(--inv-accent);">
+                            <h4 id="lirikJudul"></h4>
+                            <div class="lyrics" id="lirikIsi"></div>
                           </div>
-                          <div id="acaraList"></div>
                         </div>
                       </div>
                     </div>
@@ -508,29 +475,30 @@
                 </li>
 
                 <!-- ============================================================
-                     SLIDE 5 — LOMBA-LOMBA
+                     SLIDE 5 — PESERTA / CAROUSEL
                 ============================================================ -->
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide5">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_5" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_5" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_5" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_5" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_5" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_5" src="" style="width:30%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_5" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center" style="height:100%">
-                      <div style="width:100%;padding:0 10px;">
-                        <div class="text-center mb-2 animate__animated animate__fadeInDown animate__slower">
-                          <div style="font-family:'Antonio',sans-serif;font-size:20px;color:var(--inv-accent);font-weight:700;letter-spacing:1px;">DIVISI LOMBA</div>
-                          <div style="width:40px;height:2px;background:var(--inv-accent);margin:4px auto 0;border-radius:2px;"></div>
+                      <div style="width:100%">
+                        <div class="text-center animate__animated animate__fadeInUp animate__slower">
+                          <p style="font-size:x-small;color:var(--inv-accent);">Klik gambar untuk melihat detail peserta</p>
                         </div>
-                        <p style="font-size:10px;color:var(--inv-accent);text-align:center;font-family:'Poppins',sans-serif;margin-bottom:8px;">Tap kartu untuk lihat detail lomba</p>
-                        <!-- Tab kategori -->
-                        <div style="display:flex;gap:6px;justify-content:center;margin-bottom:10px;" id="lombaTabBar"></div>
-                        <!-- Card grid -->
-                        <div style="max-height:330px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:cross-slide-x;"
-                             onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
-                          <div id="lombaGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-bottom:10px;"></div>
+                        <!-- Carousel Swiper -->
+                        <div class="swiper mySwiper animate__animated animate__fadeInUp animate__slower" style="margin-bottom:20px;">
+                          <div class="swiper-wrapper" id="swiperWrapper">
+                            <!-- Diisi oleh JavaScript dari data PENAMPILAN -->
+                          </div>
+                          <div class="swiper-pagination"></div>
+                          <div class="swiper-button-prev"></div>
+                          <div class="swiper-button-next"></div>
                         </div>
                       </div>
                     </div>
@@ -543,9 +511,10 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide6">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_6" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_6" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_6" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_6" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_6" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_6" src="" style="width:40%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_6" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                   </div>
@@ -576,9 +545,10 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide7">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_7" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_7" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_7" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_7" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_7" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_7" src="" style="width:40%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_7" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                   </div>
@@ -628,9 +598,10 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide8">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_8" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_8" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_8" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_8" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_8" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_8" src="" style="width:40%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_8" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                   </div>
@@ -658,9 +629,10 @@
                 <li class="satumomen_slide">
                   <div class="container-mobile" id="bgSlide9">
                     <div class="frame">
-                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_9" src="" style="width:85%" alt="frame">
-                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_9" src="" style="width:35%" alt="frame">
-                      <img class="frame-bl w-100 animate__animated animate__fadeInUp animate__slower"   id="frameBL_9" src=""  alt="frame">
+                      <img class="frame-tl animate__animated animate__fadeInDown animate__slower" id="frameTL_9" src="" style="width:25%" alt="frame">
+                      <img class="frame-tr animate__animated animate__fadeInDown animate__slower" id="frameTR_9" src="" style="width:25%" alt="frame">
+                      <img class="frame-br animate__animated animate__fadeInUp animate__slower"   id="frameBR_9" src="" style="width:40%" alt="frame">
+                      <img class="frame-bl animate__animated animate__fadeInUp animate__slower"   id="frameBL_9" src="" style="width:30%" alt="frame">
                       <div class="only-cover frame-bl animate__animated animate__fadeInBottomLeft animate__slow" style="animation-delay:2.5s;"></div>
                     </div>
                   </div>
@@ -706,21 +678,21 @@
                 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.144 20.782v-3.067c0-.777.632-1.408 1.414-1.413h2.875c.786 0 1.423.633 1.423 1.413v3.058c0 .674.548 1.222 1.227 1.227h1.96a3.46 3.46 0 0 0 2.444-1 3.41 3.41 0 0 0 1.013-2.422V9.866c0-.735-.328-1.431-.895-1.902l-6.662-5.29a3.115 3.115 0 0 0-3.958.071L3.467 7.963A2.474 2.474 0 0 0 2.5 9.867v8.703C2.5 20.464 4.047 22 5.956 22h1.916c.327.002.641-.125.873-.354.232-.228.363-.54.363-.864h.036Z" fill="currentColor"/></svg>
                 <span>Beranda</span>
               </li>
-              <li class="satumomen_menu_item">
+              <li class="satumomen_menu_item"><!-- slide 2 dekorasi — ikon dokumen -->
                 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity=".4" d="M16.191 2H7.81C4.77 2 3 3.78 3 6.83v10.33C3 20.26 4.77 22 7.81 22h8.381C19.28 22 21 20.26 21 17.16V6.83C21 3.78 19.28 2 16.191 2" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.08 6.65v.01a.78.78 0 0 0 0 1.56h2.989c.431 0 .781-.35.781-.791a.781.781 0 0 0-.781-.779H8.08Zm7.84 6.09H8.08a.78.78 0 0 1 0-1.561h7.84a.781.781 0 0 1 0 1.561Zm0 4.57H8.08c-.3.04-.59-.11-.75-.36a.795.795 0 0 1 .75-1.21h7.84c.399.04.7.38.7.79 0 .399-.301.74-.7.78Z" fill="currentColor"/></svg>
-                <span>PORSENI</span>
+                <span>Deskripsi</span>
               </li>
               <li class="satumomen_menu_item">
                 <i class="fas fa-star" style="font-size:24px;"></i>
                 <span>Logo</span>
               </li>
               <li class="satumomen_menu_item">
-                <i class="fas fa-calendar-alt" style="font-size:24px;"></i>
-                <span>Pembukaan</span>
+                <i class="fas fa-music" style="font-size:24px;"></i>
+                <span>Ost</span>
               </li>
               <li class="satumomen_menu_item">
-                <i class="fas fa-trophy" style="font-size:24px;"></i>
-                <span>Lomba</span>
+                <i class="fas fa-people-group" style="font-size:24px;"></i>
+                <span>Peserta</span>
               </li>
               <li class="satumomen_menu_item">
                 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.532 2.937a6.89 6.89 0 0 1 7.034.058C17.71 4.327 19.012 6.705 19 9.26c-.05 2.54-1.447 4.929-3.193 6.775a18.727 18.727 0 0 1-3.358 2.82 1.173 1.173 0 0 1-.408.144.82.82 0 0 1-.39-.119 18.515 18.515 0 0 1-4.839-4.547A9.28 9.28 0 0 1 5 9.134c-.001-2.562 1.347-4.928 3.532-6.197Zm1.262 7.258a2.378 2.378 0 0 0 2.198 1.497 2.339 2.339 0 0 0 1.683-.701c.446-.454.696-1.07.694-1.713a2.423 2.423 0 0 0-1.462-2.243 2.346 2.346 0 0 0-2.594.52 2.455 2.455 0 0 0-.519 2.64Z" fill="currentColor"/></svg>
@@ -774,16 +746,7 @@
     </div>
   </div>
 
-  <!-- Modal Detail Lomba -->
-  <div id="modalLomba" style="display:none;position:fixed;z-index:1001;left:0;top:0;width:100%;height:100%;align-items:center;justify-content:center;backdrop-filter:blur(5px);touch-action:cross-slide-x;"
-       onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
-    <div style="background:rgba(255,255,255,0.95);border-radius:20px;width:88%;max-width:400px;padding:20px;position:relative;max-height:75vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
-      <span id="closeLomba" style="position:absolute;top:10px;right:16px;font-size:24px;font-weight:bold;cursor:pointer;color:#333;">&times;</span>
-      <div id="lombaModalContent"></div>
-    </div>
-  </div>
-
-  <!-- Modal Peserta (legacy, kept for compatibility) -->
+  <!-- Modal Peserta -->
   <div id="modalLirik" class="modal-lirik" style="display:none;overflow-y:auto;border-radius:12px;backdrop-filter:blur(5px);touch-action:cross-slide-x;"
        onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
     <div class="modal-content-lirik">
@@ -866,85 +829,41 @@
 
     // Slide 3 — Logo + sub acara
     document.getElementById('slide3Logo').src              = CONFIG.logo;
-    document.getElementById('slide3SubAcara').innerHTML    = 'PORSENI<br><span style="font-size:16px;font-family:\'Poppins\',sans-serif;font-weight:300;">1447 / 2026</span>';
+    document.getElementById('slide3SubAcara').innerHTML    = 'Ambalan<br>Creativity Event'; // ubah di sini jika perlu
 
-    // Slide 4 — Acara Pembukaan
-    const acaraList = document.getElementById('acaraList');
-    if (acaraList) {
-      ACARA_PEMBUKAAN.forEach(item => {
-        acaraList.innerHTML += `
-          <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.2);">
-            <div style="min-width:28px;height:28px;background:var(--inv-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Antonio',sans-serif;font-size:11px;color:#fff;font-weight:700;">${item.no}</div>
-            <div style="font-family:'Poppins',sans-serif;font-size:11.5px;color:var(--inv-base);line-height:1.5;padding-top:5px;">${item.teks}</div>
-          </div>`;
-      });
-    }
+    // Slide 4 — Lirik
+    document.getElementById('lirikJudul').textContent      = LIRIK_OST.judul;
+    document.getElementById('lirikIsi').innerHTML          = LIRIK_OST.isi;
 
-    // Slide 5 — Lomba Cards
-    let activeCat = 0;
-    const tabBar  = document.getElementById('lombaTabBar');
-    const grid    = document.getElementById('lombaGrid');
-
-    function renderLombaCards(catIndex) {
-      grid.innerHTML = '';
-      LOMBA_DATA[catIndex].items.forEach((lomba, i) => {
-        const card = document.createElement('div');
-        card.style.cssText = `background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.35);border-radius:14px;padding:10px 8px;cursor:pointer;text-align:center;transition:transform .15s;`;
-        card.innerHTML = `
-          <div style="font-size:22px;margin-bottom:4px;">${lomba.icon}</div>
-          <div style="font-family:'Antonio',sans-serif;font-size:13px;color:var(--inv-accent);font-weight:700;line-height:1.2;">${lomba.nama}</div>
-          <div style="font-family:'Poppins',sans-serif;font-size:9px;color:var(--inv-base);margin-top:4px;">${lomba.peserta}</div>
-        `;
-        card.addEventListener('click', () => openLombaModal(lomba));
-        card.addEventListener('touchstart', () => card.style.transform = 'scale(0.96)', {passive:true});
-        card.addEventListener('touchend', () => card.style.transform = 'scale(1)', {passive:true});
-        grid.appendChild(card);
-      });
-    }
-
-    function renderTabs() {
-      tabBar.innerHTML = '';
-      LOMBA_DATA.forEach((cat, i) => {
-        const btn = document.createElement('button');
-        btn.style.cssText = `font-family:'Antonio',sans-serif;font-size:10px;padding:4px 10px;border-radius:20px;border:1px solid var(--inv-accent);cursor:pointer;transition:all .2s;background:${i===activeCat?'var(--inv-accent)':'transparent'};color:${i===activeCat?'#fff':'var(--inv-accent)'};`;
-        btn.textContent = cat.kategori;
-        btn.addEventListener('click', () => {
-          activeCat = i;
-          renderTabs();
-          renderLombaCards(i);
-        });
-        tabBar.appendChild(btn);
-      });
-    }
-
-    renderTabs();
-    renderLombaCards(0);
-
-    // Modal lomba detail
-    const modalLomba = document.getElementById('modalLomba');
-    const closeLomba = document.getElementById('closeLomba');
-
-    function openLombaModal(lomba) {
-      document.getElementById('lombaModalContent').innerHTML = `
-        <div style="text-align:center;margin-bottom:12px;">
-          <div style="font-size:36px;">${lomba.icon}</div>
-          <div style="font-family:'Antonio',sans-serif;font-size:22px;color:#e8621a;font-weight:700;">${lomba.nama}</div>
+    // Slide 5 — Carousel peserta (bangun dari array PENAMPILAN)
+    const wrapper = document.getElementById('swiperWrapper');
+    PENAMPILAN.forEach(item => {
+      const pesertaList = item.peserta.map(p => `<li>${p}</li>`).join('');
+      const pjList      = item.pj.join('<br>');
+      const modalHtml   = `
+        <h2>${item.judul}</h2>
+        <div class="event-info">
+          <p><strong>Penanggung Jawab:</strong><br>${pjList}</p>
+          <p><strong>Durasi:</strong> ${item.durasi}</p>
         </div>
-        <div style="font-family:'Poppins',sans-serif;font-size:12px;color:#333;line-height:1.7;">
-          <div style="margin-bottom:10px;"><strong style="color:#e8621a;">👥 Peserta:</strong> ${lomba.peserta}</div>
-          <div style="margin-bottom:10px;"><strong style="color:#e8621a;">👕 Kostum:</strong> ${lomba.kostum}</div>
-          <div style="margin-bottom:10px;"><strong style="color:#e8621a;">📋 Format:</strong> ${lomba.format}</div>
-          <div style="margin-bottom:10px;"><strong style="color:#e8621a;">🏅 Poin:</strong> ${lomba.poin}</div>
-          <div style="background:#fff7f0;border-left:3px solid #e8621a;padding:10px 12px;border-radius:0 8px 8px 0;margin-top:8px;">
-            <strong style="color:#e8621a;">📖 Cara Bermain:</strong><br>${lomba.detail}
-          </div>
+        <div class="event-description"><p>${item.deskripsi}</p></div>
+        <div class="event-participants">
+          <h3>Peserta Acara</h3>
+          <ul>${pesertaList}</ul>
         </div>
       `;
-      modalLomba.style.display = 'flex';
-    }
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `
+        <img src="${item.foto}" alt="${item.judul}"
+             class="img-foto-lirik"
+             style="border-radius:20px;width:100%;height:auto;"
+             data-lirik='${modalHtml.replace(/'/g,"&#39;")}'>
+      `;
+      wrapper.appendChild(slide);
+    });
 
-    closeLomba.addEventListener('click', () => { modalLomba.style.display = 'none'; });
-    modalLomba.addEventListener('click', e => { if (e.target === modalLomba) modalLomba.style.display = 'none'; });
+    // Slide 6 — Maps
     document.getElementById('mapImg').src          = CONFIG.mapImage;
     document.getElementById('lokasiTeks').textContent = CONFIG.lokasi;
     document.getElementById('mapLink').href         = CONFIG.mapsUrl;
