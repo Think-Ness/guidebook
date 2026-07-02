@@ -140,7 +140,7 @@
   <meta property="og:title" content="DRAMA CONTEST" />
   <meta property="og:description"
     content="Drama Contest Guidebook. Find complete event information, rundowns, and attendance guidelines here." />
-  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1mFqf7UTM1aD2u-NWc4BpreSep_hj8gL3" />
+  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=18VDzG9pUONKTf5-vFUvQaFEh9SFBh-vY" />
 
   <!-- ============================================================
        DEPENDENCIES (jangan diubah kecuali update versi)
@@ -1002,33 +1002,62 @@
       if (acaraList) {
         ACARA_PEMBUKAAN.forEach(item => {
           acaraList.innerHTML += `
-          <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.2);">
-            <div style="min-width:28px;height:28px;background:var(--inv-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Pixelta',sans-serif;font-size:11px;color:#fff;font-weight:700;">${item.no}</div>
-            <div style="font-family:'Poppins',sans-serif;font-size:11.5px;color:var(--inv-base);line-height:1.5;padding-top:5px;">${item.teks}</div>
+          <div style="
+            position:relative;
+            padding:10px;
+            margin-bottom:6px;
+            background:#8B8B8B;
+            border:3px solid #1A1A1A;
+            border-top-color:#C6C6C6;
+            border-left-color:#C6C6C6;
+            image-rendering:pixelated;
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+          ">
+            <div style="
+              min-width:28px;
+              height:28px;
+              background:#555;
+              border:2px solid #373737;
+              border-top-color:#373737;
+              border-left-color:#373737;
+              border-bottom-color:#FFF;
+              border-right-color:#FFF;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-family:'Pixelta',sans-serif;
+              font-size:12px;
+              color:#fff;
+              font-weight:700;
+              text-shadow:1px 1px 0px #000;
+            ">${item.no}</div>
+            <div style="font-family:'Poppins',sans-serif;font-size:11.5px;color:#fff;line-height:1.5;padding-top:2px;text-shadow:1px 1px 0px #000;">${item.teks}</div>
           </div>`;
         });
       }
 
       // ── Slide 5 — Lomba Scroll List ──
-      // Semua kategori ditampilkan berurutan, tidak ada tab.
-      // Klik detail buka modal biasa (tidak ada konflik swipe).
       (function () {
         var area = document.getElementById('lombaScrollArea');
         var modalLomba = document.getElementById('modalLomba');
 
         function buildScrollList() {
           var html = '';
-          LOMBA_DATA.forEach(function (cat) {
+          LOMBA_DATA.forEach(function (cat, idx) {
 
-            // ── Header kategori ──
+            // ── Header kategori (Minecraft sign style) ──
             html += '<div style="' +
-              'display:flex;align-items:center;gap:8px;' +
-              'margin:10px 0 10px;' +
+              'display:flex;align-items:center;gap:0;' +
+              'padding:8px 12px;margin-bottom:10px;margin-top:' + (idx > 0 ? '16px' : '0') + ';' +
+              'background:#8B6914;' +
+              'border:3px solid #1A1A1A;' +
+              'border-top-color:#C4A44A;border-left-color:#C4A44A;' +
+              'box-shadow:2px 2px 0px #1A1A1A;' +
+              'image-rendering:pixelated;' +
               '">' +
               '<div style="' +
-              'width:4px;height:28px;border-radius:4px;flex-shrink:0;' +
-              'background:' + cat.warna + ';' +
-              'box-shadow:0 0 8px ' + cat.warna + '99;' +
               '"></div>' +
               '<div style="' +
               'font-family:\'Pixelta\',sans-serif;font-size:15px;font-weight:700;' +
@@ -1037,36 +1066,28 @@
               '<div style="flex:1;height:1px;background:linear-gradient(to right,' + cat.warna + '88,transparent);margin-left:4px;"></div>' +
               '</div>';
 
-            // ── Card tiap lomba ──
+            // ── Card tiap lomba (Minecraft inventory slot) ──
             cat.items.forEach(function (lomba) {
               html += '<div class="lomba-row" data-lomba=\'' + encodeURIComponent(JSON.stringify(lomba)) + '\'' +
                 ' style="' +
                 'position:relative;overflow:hidden;' +
-                'display:flex;align-items:center;gap:12px;' +
-                'padding:10px 12px 10px 10px;margin-bottom:14px;' +
-                'background:#ffffff;' +
-                'border-radius:0;' +
-                'border:3px solid var(--inv-base);' +
-                'border-left:8px solid ' + cat.warna + ';' +
-                'box-shadow:4px 4px 0px var(--inv-base);' +
+                'display:flex;align-items:center;gap:10px;' +
+                'padding:8px 10px;margin-bottom:4px;' +
+                'background:#8B8B8B;' +
+                'border:3px solid #1A1A1A;' +
+                'border-top-color:#C6C6C6;border-left-color:#C6C6C6;' +
                 'cursor:pointer;' +
-                'transition:transform .15s,background .15s;' +
+                'transition:all .1s;' +
+                'image-rendering:pixelated;' +
                 '">' +
 
-                // Glow accent pojok kanan atas
+                // Thumbnail slot (darker inner slot like MC inventory)
                 '<div style="' +
-                'position:absolute;top:-10px;right:-10px;' +
-                'width:40px;height:40px;border-radius:50%;' +
-                'background:' + cat.warna + '33;' +
-                'filter:blur(10px);pointer-events:none;display:none;' +
-                '"></div>' +
-
-                // Ikon kotak pixel
-                '<div style="' +
-                'width:44px;height:44px;border-radius:0;flex-shrink:0;' +
-                'border:2px solid var(--inv-base);' +
-                'background:' + cat.warna + '22;' +
-                'display:flex;align-items:center;justify-content:center;' +
+                'width:44px;height:44px;flex-shrink:0;' +
+                'border:2px solid #373737;' +
+                'border-top-color:#373737;border-left-color:#373737;' +
+                'border-bottom-color:#FFF;border-right-color:#FFF;' +
+                'background:#555;' +
                 'overflow:hidden;' +
                 '">' +
                 '<img src="' + lomba.gambar + '" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated;">' +
@@ -1075,22 +1096,26 @@
                 // Teks
                 '<div style="flex:1;min-width:0;">' +
                 '<div style="' +
-                'font-family:\'Pixelta\',sans-serif;font-size:14px;font-weight:700;' +
-                'color:#1b1b1b;letter-spacing:0.5px;line-height:1.2;' +
+                'font-family:\'Pixelta\',sans-serif;font-size:13px;font-weight:700;' +
+                'color:#FFFFFF;letter-spacing:0.5px;line-height:1.3;' +
+                'text-shadow:2px 2px 0px #3F3F3F;' +
                 '">' + lomba.nama + '</div>' +
                 '<div style="' +
                 'font-family:\'Poppins\',sans-serif;font-size:10px;' +
-                'color:#666;margin-top:4px;' +
+                'color:#E0E0E0;margin-top:3px;' +
+                'text-shadow:1px 1px 0px #3F3F3F;' +
                 '">' + lomba.peserta + '</div>' +
                 '</div>' +
 
-                // Panah
+                // Arrow button (Minecraft stone button)
                 '<div style="' +
-                'width:24px;height:24px;border-radius:50%;flex-shrink:0;' +
-                'background:' + cat.warna + '33;' +
+                'width:22px;height:22px;flex-shrink:0;' +
+                'background:#999;' +
+                'border:2px solid #1A1A1A;' +
+                'border-top-color:#DDD;border-left-color:#DDD;' +
                 'display:flex;align-items:center;justify-content:center;' +
-                'font-size:13px;color:' + cat.warna + ';font-weight:700;' +
-                '">›</div>' +
+                'font-family:\'Pixelta\',sans-serif;font-size:12px;color:#333;font-weight:700;' +
+                '">></div>' +
 
                 '</div>';
             });
@@ -1100,15 +1125,21 @@
 
           area.innerHTML = html;
 
-          // Efek press & klik
+          // Efek press & klik (Minecraft button press)
           area.querySelectorAll('.lomba-row').forEach(function (row) {
             row.addEventListener('touchstart', function () {
-              this.style.transform = 'translate(4px, 4px)';
-              this.style.boxShadow = '0px 0px 0px var(--inv-base)';
+              this.style.borderTopColor = '#373737';
+              this.style.borderLeftColor = '#373737';
+              this.style.borderBottomColor = '#C6C6C6';
+              this.style.borderRightColor = '#C6C6C6';
+              this.style.background = '#707070';
             }, { passive: true });
             row.addEventListener('touchend', function () {
-              this.style.transform = 'translate(0px, 0px)';
-              this.style.boxShadow = '4px 4px 0px var(--inv-base)';
+              this.style.borderTopColor = '#C6C6C6';
+              this.style.borderLeftColor = '#C6C6C6';
+              this.style.borderBottomColor = '#1A1A1A';
+              this.style.borderRightColor = '#1A1A1A';
+              this.style.background = '#8B8B8B';
             }, { passive: true });
             row.addEventListener('click', function () {
               var lomba = JSON.parse(decodeURIComponent(row.getAttribute('data-lomba')));
