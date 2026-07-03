@@ -883,9 +883,9 @@
       style="display:none;position:fixed;z-index:1001;left:0;top:0;width:100%;height:100%;align-items:center;justify-content:center;backdrop-filter:blur(5px);touch-action:cross-slide-x;"
       onwheel="event.stopPropagation();" ontouchmove="event.stopPropagation();">
       <div
-        style="background:rgba(255,255,255,0.95);border-radius:20px;width:88%;max-width:400px;padding:20px;position:relative;max-height:75vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
+        style="background:#C6C6C6;border:4px solid #1A1A1A;border-radius:0;width:88%;max-width:400px;padding:20px;position:relative;max-height:75vh;overflow-y:auto;box-shadow:8px 8px 0px rgba(0,0,0,0.5);">
         <span id="closeLomba"
-          style="position:absolute;top:10px;right:16px;font-size:24px;font-weight:bold;cursor:pointer;color:#333;">&times;</span>
+          style="position:absolute;top:10px;right:14px;font-family:'Pixelta',sans-serif;font-size:20px;font-weight:bold;cursor:pointer;color:#333;background:#999;border:2px solid #1A1A1A;border-top-color:#DDD;border-left-color:#DDD;width:28px;height:28px;display:flex;align-items:center;justify-content:center;line-height:1;" onmousedown="this.style.borderTopColor='#333';this.style.borderLeftColor='#333';this.style.borderBottomColor='#DDD';this.style.borderRightColor='#DDD';this.style.background='#777';" onmouseup="this.style.borderTopColor='#DDD';this.style.borderLeftColor='#DDD';this.style.borderBottomColor='#1A1A1A';this.style.borderRightColor='#1A1A1A';this.style.background='#999';">X</span>
         <div id="lombaModalContent"></div>
       </div>
     </div>
@@ -1158,62 +1158,59 @@
           });
 
           document.getElementById('lombaModalContent').innerHTML =
-            // Image Carousel (Swiper Wrapper)
-            '<div style="margin:-20px -20px 16px; border-radius:20px 20px 0 0; overflow:hidden; position:relative; background:#000;">' +
-            '<div class="swiper-container modal-swiper" style="width:100%; height:300px;">' +
+            // Image Area (Pixelated Frame)
+            '<div style="margin:-20px -20px 16px; border-bottom:4px solid #1A1A1A; overflow:hidden; position:relative; background:#000;">' +
+            '<div class="swiper-container modal-swiper" style="width:100%; height:250px;">' +
             '<div class="swiper-wrapper">' +
             '<div class="swiper-slide">' +
-            '<img src="' + lomba.gambar + '" style="width:100%; height:100%; object-fit:cover; opacity:0.8;">' +
+            '<img src="' + lomba.gambar + '" style="width:100%; height:100%; object-fit:cover; opacity:0.85; image-rendering:pixelated;">' +
             '</div>' +
             '</div>' +
             '<div class="swiper-pagination"></div>' +
             '</div>' +
-            // Overlay Text
+            // Overlay Text (Minecraft sign style)
             '<div style="position:absolute; bottom:0; left:0; width:100%; padding:40px 20px 15px; background:linear-gradient(to top, rgba(0,0,0,0.9), transparent); z-index:10;">' +
-            '<div style="font-family:\'Pixelta\',sans-serif;font-size:24px;color:#fff;font-weight:700;letter-spacing:1px;text-shadow:0 2px 4px rgba(0,0,0,0.8);">' + lomba.nama + '</div>' +
-            '<div style="display:inline-block;margin-top:6px;padding:4px 14px;background:rgba(255,255,255,0.2);backdrop-filter:blur(4px);border-radius:20px;font-family:\'Poppins\',sans-serif;font-size:11px;color:#fff;">' + lomba.peserta + '</div>' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:24px;color:#fff;font-weight:700;letter-spacing:1px;text-shadow:3px 3px 0px #1A1A1A;">' + lomba.nama + '</div>' +
+            '<div style="display:inline-block;margin-top:8px;padding:4px 10px;background:#555;border:2px solid #1A1A1A;font-family:\'Pixelta\',sans-serif;font-size:10px;color:#fff;text-shadow:1px 1px 0px #000;">' + lomba.peserta + '</div>' +
             '</div>' +
             '</div>' +
 
-            // Info chips
+            // Info chips (Minecraft item slots)
             '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">' +
-            '<div style="flex:1;min-width:130px;background:#f8f9fa;border-radius:12px;padding:10px 12px;border-left:4px solid ' + warna + ';box-shadow:0 2px 6px rgba(0,0,0,0.03);">' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:9px;color:#888;margin-bottom:4px;letter-spacing:0.5px;">KARAKTER UTAMA</div>' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#222;font-weight:600;">' + lomba.kostum + '</div>' +
+            '<div style="flex:1;min-width:130px;background:#8B8B8B;padding:10px;border:3px solid #1A1A1A;border-top-color:#C6C6C6;border-left-color:#C6C6C6;">' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:9px;color:#444;margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Karakter Utama</div>' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:12px;color:#FFFFFF;font-weight:700;text-shadow:1px 1px 0px #3F3F3F;">' + lomba.kostum + '</div>' +
             '</div>' +
-            '<div style="flex:1;min-width:130px;background:#f8f9fa;border-radius:12px;padding:10px 12px;border-left:4px solid ' + warna + ';box-shadow:0 2px 6px rgba(0,0,0,0.03);">' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:9px;color:#888;margin-bottom:4px;letter-spacing:0.5px;">PROPERTI & MIC</div>' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#222;font-weight:600;">' + lomba.format + '</div>' +
+            '<div style="flex:1;min-width:130px;background:#8B8B8B;padding:10px;border:3px solid #1A1A1A;border-top-color:#C6C6C6;border-left-color:#C6C6C6;">' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:9px;color:#444;margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Properti & Mic</div>' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:12px;color:#FFFFFF;font-weight:700;text-shadow:1px 1px 0px #3F3F3F;">' + lomba.format + '</div>' +
             '</div>' +
             '</div>' +
 
-            // Timeline Konsep
-            '<div style="position:relative; margin-bottom:20px; padding-left:14px;">' +
-            // Garis vertikal timeline
-            '<div style="position:absolute; left:4px; top:10px; bottom:10px; width:2px; background:' + warna + '44;"></div>' +
+            // Timeline Konsep (Minecraft style blocks)
+            '<div style="position:relative; margin-bottom:20px;">' +
 
             // Konsep Masuk
-            '<div style="position:relative; margin-bottom:16px;">' +
-            '<div style="position:absolute; left:-14px; top:4px; width:10px; height:10px; border-radius:50%; background:' + warna + '; box-shadow:0 0 0 3px ' + warna + '33;"></div>' +
-            '<div style="font-family:\'Pixelta\',sans-serif;font-size:13px;color:' + warna + ';margin-bottom:4px;">Konsep Masuk</div>' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#444;line-height:1.6;background:#fff;padding:10px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">' + lomba.poin + '</div>' +
+            '<div style="background:#555; padding:12px; margin-bottom:12px; border:3px solid #1A1A1A; border-top-color:#888; border-left-color:#888;">' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:14px;color:#FFD700;margin-bottom:8px;text-shadow:1px 1px 0px #000;border-bottom:2px solid #333;padding-bottom:4px;">[ Konsep Masuk ]</div>' +
+            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#FFF;line-height:1.6;text-shadow:1px 1px 0px #222;">' + lomba.poin + '</div>' +
             '</div>' +
 
             // Konsep Keluar
-            '<div style="position:relative;">' +
-            '<div style="position:absolute; left:-14px; top:4px; width:10px; height:10px; border-radius:50%; background:' + warna + '; box-shadow:0 0 0 3px ' + warna + '33;"></div>' +
-            '<div style="font-family:\'Pixelta\',sans-serif;font-size:13px;color:' + warna + ';margin-bottom:4px;">Konsep Keluar</div>' +
-            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#444;line-height:1.6;background:#fff;padding:10px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.05);">' + lomba.detail + '</div>' +
+            '<div style="background:#555; padding:12px; border:3px solid #1A1A1A; border-top-color:#888; border-left-color:#888;">' +
+            '<div style="font-family:\'Pixelta\',sans-serif;font-size:14px;color:#FFD700;margin-bottom:8px;text-shadow:1px 1px 0px #000;border-bottom:2px solid #333;padding-bottom:4px;">[ Konsep Keluar ]</div>' +
+            '<div style="font-family:\'Poppins\',sans-serif;font-size:12px;color:#FFF;line-height:1.6;text-shadow:1px 1px 0px #222;">' + lomba.detail + '</div>' +
             '</div>' +
             '</div>' +
 
-            // Tombol Buka Naskah
+            // Tombol Buka Naskah (Minecraft button)
             '<div style="text-align:center; margin-top:20px;">' +
-            '<button onclick="document.getElementById(\'naskahContainer\').style.display=\'block\'; this.style.display=\'none\';" style="background:' + warna + '; color:#fff; border:2px solid #1b1b1b; border-radius:8px; padding:12px 24px; font-family:\'Pixelta\',sans-serif; font-size:16px; cursor:pointer; box-shadow:4px 4px 0px rgba(0,0,0,0.2); width:100%; transition:all 0.1s ease;">' +
+            '<button onclick="document.getElementById(\'naskahContainer\').style.display=\'block\'; this.style.display=\'none\';" style="background:#999; color:#333; border:3px solid #1A1A1A; border-top-color:#DDD; border-left-color:#DDD; padding:12px 24px; font-family:\'Pixelta\',sans-serif; font-size:16px; cursor:pointer; width:100%; transition:all 0.1s ease;" onmousedown="this.style.borderTopColor=\'#333\';this.style.borderLeftColor=\'#333\';this.style.borderBottomColor=\'#DDD\';this.style.borderRightColor=\'#DDD\';this.style.background=\'#777\';" onmouseup="this.style.borderTopColor=\'#DDD\';this.style.borderLeftColor=\'#DDD\';this.style.borderBottomColor=\'#1A1A1A\';this.style.borderRightColor=\'#1A1A1A\';this.style.background=\'#999\';">' +
             'Baca Naskah Drama' +
             '</button>' +
             '</div>' +
-            '<div id="naskahContainer" style="display:none; margin-top:16px; padding:16px; background:#fafafa; border:1px solid #ddd; border-radius:12px; box-shadow:inset 0 2px 4px rgba(0,0,0,0.03); max-height:400px; overflow-y:auto; font-family:\'Poppins\',sans-serif; font-size:13px; color:#333; text-align:right; direction:rtl; line-height:1.8;">' +
+            // Container Naskah (Minecraft Book style)
+            '<div id="naskahContainer" style="display:none; margin-top:16px; padding:20px; background:#E5C298; border:3px solid #3D2314; box-shadow:inset 0 0 10px rgba(0,0,0,0.5); max-height:350px; overflow-y:auto; font-family:\'Poppins\',sans-serif; font-size:13px; color:#2C1808; text-align:right; direction:rtl; line-height:1.8;">' +
             (typeof NASKAH_TEXT !== "undefined" && NASKAH_TEXT[lomba.nama] ? NASKAH_TEXT[lomba.nama] : "Naskah belum tersedia.") +
             '</div>';
 
